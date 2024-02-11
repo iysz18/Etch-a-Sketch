@@ -1,14 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const parent = document.querySelector('#gameContainer');
+// user input must be less or equal to 100
+const gridSize = prompt('Enter desired canvas grid (must be less than 100): ');
+if (gridSize > 100) gridSize = 99
+alert('Grid size is 99, you entered a size over 100!');
 
-    for (let i = 0; i < 16; i++) {
-        // create new div
-        const newDiv = document.createElement('div');
-        // apply styles to each created div
-        newDiv.textContent = `Div: ${i}`;
-        newDiv.style.border = '1px solid black';
-        newDiv.style.height = '50px';
-        newDiv.style.width = '50px';
-        parent.appendChild(newDiv);
+/* get the reference to '#gameContainer */
+const canvas = document.querySelector('#canvas');
+
+/* create the 16x16 grid */
+for (let row = 0; row < gridSize; row++) {
+    for (let column = 0; column < gridSize; column++) {
+        const pixel = document.createElement('div');
+        // apply css styles to the recent created div (pixel)
+        pixel.style.height = '25px';
+        pixel.style.width = '25px';
+        pixel.style.border = '1px solid transparent';
+        pixel.style.boxSizing = 'border-box';
+        canvas.appendChild(pixel);
+
+        // add for the recent created div (pixel) the 'mouseover' event
+        pixel.addEventListener('mouseover', () => {
+            pixel.style.backgroundColor = 'grey';
+        });
     }
-});
+}
