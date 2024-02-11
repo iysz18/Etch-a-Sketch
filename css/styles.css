@@ -1,0 +1,5 @@
+#gameContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 210px;
+}
