@@ -10,3 +10,7 @@
     flex-wrap: wrap;
     border: 5px solid black;
 }
+
+.dimensionBtn {
+    font-size: 20px;
+}
