@@ -8,7 +8,8 @@ Utilizing the `div` element in HTML to display `pixels`
 * A way to 'erase' pixels from the canvas
 * Reset the whole canvas
 * Improve this README.md file in readability for the future versions
+* Replace the automatic popup prompt with buttons for selecting the grid dimensions, allowing the users to specify both the X and Y dimensions of the grid.
 
 ## What's done:
-* [X] User can enter a desired gridsize (less or equal to 100) 
+* [X] User get prompt to enter a desired gridsize (less or equal to 100)
 
