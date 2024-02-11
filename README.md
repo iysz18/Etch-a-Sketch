@@ -6,5 +6,5 @@ A simple browser version of something between a sketchpad and an Etch-A-Sketch.
 * Multiple colors to choose from []
 * A way to erase 'pixels' from the canvas []
 * Reset the whole canvas []
-* User can enter a desired gridsize (less or equal to 100) [X]
+* [X] User can enter a desired gridsize (less or equal to 100) 
 
