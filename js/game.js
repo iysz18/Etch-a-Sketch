@@ -1,52 +1,43 @@
-// all the references to DOM nodes
-const canvas = document.querySelector('#canvas')
-const btnX = document.querySelector('.dimensionBtn');
-const btnY = document.querySelector('.dimensionBtn');
+const canvas = document.querySelector('#canvas');
+const generateCanvas = document.querySelector('#genBtn');
+const resetCanvas = document.querySelector('#resetBtn');
 
 
-let gridX = 0;
-let gridY = 0;
-btnX.addEventListener('click', () => {
-    let inputXY = prompt('Enter X & Y values (seperated by comma):');
-    inputXY = inputXY.split(',');
-    console.log(inputXY);
-    if (inputXY.length === 2) {
-        gridX = parseInt(inputXY[0].trim());
-        gridY = parseInt(inputXY[1].trim());
-        if (gridX > 100 || gridY > 100) {
-            alert('Please enter values less than 100;');
-        }
-        else {
-           createGrid(); 
-        }
-    }
-    else {
-        alert('Please enter two values seperated by comma.');
-    }
+// reset the canvas with the rest button
+resetCanvas.addEventListener('click', () => {
+    canvas.innerHTML = '';
 });
 
-function createGrid() {
-    canvas.innerHtml = ''; 
-    for (let row = 0; row < gridX; row++) {
-        for (let column = 0; column < gridY; column++) {
-            // create the pixel and style it accordingly
+
+// generate the canvas 
+generateCanvas.addEventListener('click', () => {
+    // as security measure, rest the canvas anyways
+    canvas.innerHTML = '';
+    let usrInput = prompt("Enter a number up to 100:");
+    // ensure the user's provided value is a number
+    if (!isNaN(usrInput) && (Number(usrInput) <= 100)) {
+        let gridSize = parseInt(usrInput) + 1;
+        createGrid(gridSize);
+    } else alert('Provided value is not a number or exceeds the limit.');
+});
+
+
+// create the grid witht the size the user provided
+function createGrid(gridSize) {
+    const pixelSize = (960 / gridSize);
+    for (let i = 0; i < gridSize; i++)  {
+        for (let j = 0; j < gridSize; j++) {
             const pixel = document.createElement('div');
-            pixel.style.height = '25px';
-            pixel.style.width = '25px';
-            pixel.style.border = '1px solid transparent';
-            pixel.style.boxSizing = 'border-box';
-            canvas.appendChild(pixel);
-    
+            pixel.style.width = `${pixelSize}px`
+            pixel.style.height = `${pixelSize}px`
+            pixel.classList.add('pixel');
+
+            // add event listener to change color of each pixel
             pixel.addEventListener('mouseover', () => {
-                pixel.style.backgroundColor = 'grey';
+                pixel.style.backgroundColor = 'black';
             });
+            
+            canvas.appendChild(pixel);
         }
     }
-    // create the grid
-    canvas.style.height = (gridX * 25) + 'px';
-    canvas.style.width = (gridY * 25) + 'px';
 }
-
-
-
-
