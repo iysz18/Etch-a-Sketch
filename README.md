@@ -8,6 +8,8 @@ Utilizing the `div` element in HTML to display `pixels`
 
 * Implementing a progressively darkening effetct where each interaction adds 10% more black or color to the square. The objective is to achieve a completely black square only after ten interactions.
 
+* Option to disable/enable the outlines of the pixels
+
 
 ## What's done:
 * [X] Prompt to enter a desired grid dimension between 0 - 100.
