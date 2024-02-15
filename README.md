@@ -15,3 +15,4 @@ Utilizing the `div` element in HTML to display `pixels`
 
 * [X] Replace the automatic popup prompt with a button for selecting the grid dimensions, allowing the users to specify both the X and Y dimensions of the grid.
 
+* [X] User can choose any color he wants to increase the experience with Etch-a-Sketch.
