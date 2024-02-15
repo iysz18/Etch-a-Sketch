@@ -10,7 +10,7 @@ Utilizing the `div` element in HTML to display `pixels`
 
 
 ## What's done:
-* [X] User get prompt to enter a desired grid dimension (less or equal to 100).
+* [X] Prompt to enter a desired grid dimension between 0 - 100.
 
 * [X] Replace the automatic popup prompt with a button for selecting the grid dimensions, allowing the users to specify both the X and Y dimensions of the grid.
 
