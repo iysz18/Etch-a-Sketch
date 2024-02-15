@@ -10,7 +10,7 @@ generateCanvas.addEventListener('click', () => {
     canvas.innerHTML = '';
     let usrInput = prompt("Enter a number between 0 - 100");
     // ensure the user's provided value is a number
-    if (!isNaN(usrInput) && (Number(usrInput) <= 100)) {
+    if (!isNaN(usrInput) && (Number(usrInput) <= 400)) {
         let gridSize = parseInt(usrInput);
         createGrid(gridSize);
     } else alert('Provided value is not a number or exceeds the limit.');
@@ -19,14 +19,23 @@ generateCanvas.addEventListener('click', () => {
 
 // color button logic, choose color to change the pixel
 colorBtn.addEventListener('click', () => {
-    let color = prompt("Enter color");
+    let color = prompt("You can enter any color or 'rgb' for rgb random output.");
+    color = color.toLocaleLowerCase();
     
     canvas.childNodes.forEach(pixel => {
         pixel.addEventListener('mouseover', () => {
-            pixel.style.backgroundColor = `${color}`;
+            if (color !== 'rgb') pixel.style.backgroundColor = `${color}`;
+            else {
+                const red = Math.floor(Math.random() * 256);
+                const green = Math.floor(Math.random() * 256);
+                const blue = Math.floor(Math.random() * 256);
+                const rgbColor = `rgb(${red}, ${green}, ${blue})`;
+                pixel.style.backgroundColor = `${rgbColor}`;
+            }
         });
     })
 });
+
 
 // reset button lgoic, clear the canvas
 resetCanvas.addEventListener('click', () => {
