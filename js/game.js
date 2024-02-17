@@ -2,8 +2,8 @@ const canvas = document.querySelector('#canvas');
 const generateCanvas = document.querySelector('#genBtn');
 const resetCanvas = document.querySelector('#resetBtn');
 const colorBtn = document.querySelector('#colorBtn');
-const darkeningBtn = document.querySelector('#darkeningBtn');
 const eraseBtn = document.querySelector('#eraseBtn');
+
 
 // generate the canvas 
 generateCanvas.addEventListener('click', () => {
@@ -17,13 +17,11 @@ generateCanvas.addEventListener('click', () => {
     } else alert('Provided value is not a number or exceeds the limit.');
 });
 
-// progressively change the darkening of a pixel by 10%
-
 
 // erase button to remove coloring of each pixel
 eraseBtn.addEventListener('click', () => {
-    canvas.childNodes.forEach(pixel => {
-        pixel.style.backgroundColor = '';
+    canvas.childNodes.forEach( (pixel) => {
+        pixel.style.backgroundColor = "transparent";
     });
 });
 
@@ -48,12 +46,6 @@ colorBtn.addEventListener('click', () => {
 });
 
 
-// reset button lgoic, clear the canvas
-resetCanvas.addEventListener('click', () => {
-    canvas.innerHTML = '';
-})
-
-
 // create the grid witht the size the user provided
 function createGrid(gridSize) {
     const pixelSize = (960 / gridSize);
@@ -68,3 +60,8 @@ function createGrid(gridSize) {
     }
 }
 
+
+// reset button lgoic, clear the canvas
+resetCanvas.addEventListener('click', () => {
+    canvas.innerHTML = '';
+})
