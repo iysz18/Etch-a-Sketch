@@ -3,13 +3,19 @@ body, html {
     margin: 0;
 }
 
+body {
+    background-color: antiquewhite;
+}
+
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
 
-#btnContainer > #genBtn, #resetBtn {
+}
+
+#btnContainer > * {
     margin: 25px 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
@@ -23,6 +29,8 @@ body, html {
     flex-wrap: wrap;
     border: 5px solid red;
     box-sizing: content-box;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -30,4 +38,11 @@ body, html {
     box-sizing: border-box;
     border-left: 1px solid black;
     border-top: 1px solid black;
+    background-color: transparent;
+}
+
+#github {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
 }
