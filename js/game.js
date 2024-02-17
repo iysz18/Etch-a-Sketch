@@ -3,7 +3,24 @@ const generateCanvas = document.querySelector('#genBtn');
 const resetCanvas = document.querySelector('#resetBtn');
 const colorBtn = document.querySelector('#colorBtn');
 const eraseBtn = document.querySelector('#eraseBtn');
+const outlinesBtn = document.querySelector('#outlinesBtn');
 
+// show this message as default text when canvas is empty
+canvas.innerHTML = 'Click on "Generate" to create a new Blank Canvas.';
+
+// enable/disable outliens of each pixel on the canvas
+outlinesBtn.addEventListener('click', () => {
+    canvas.childNodes.forEach((pixel) => {
+        if (pixel.style.borderLeft === '' && pixel.style.borderTop === '') {
+            pixel.style.borderLeft = '1px solid black';
+            pixel.style.borderTop = '1px solid black';
+        } else {
+            // disable borders
+            pixel.style.borderLeft = '';
+            pixel.style.borderTop = '';
+        }
+    });
+});
 
 // generate the canvas 
 generateCanvas.addEventListener('click', () => {
@@ -23,6 +40,8 @@ eraseBtn.addEventListener('click', () => {
     canvas.childNodes.forEach( (pixel) => {
         pixel.style.backgroundColor = "transparent";
     });
+
+    alert("Colors have been removed.");
 });
 
 
@@ -63,5 +82,6 @@ function createGrid(gridSize) {
 
 // reset button lgoic, clear the canvas
 resetCanvas.addEventListener('click', () => {
-    canvas.innerHTML = '';
+    canvas.innerHTML = 'Click on "Generate" to create a new Blank Canvas.';
+    alert("Canvas has been reset.");
 })
