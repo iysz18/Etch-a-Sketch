@@ -2,6 +2,7 @@ const canvas = document.querySelector('#canvas');
 const generateCanvas = document.querySelector('#genBtn');
 const resetCanvas = document.querySelector('#resetBtn');
 const colorBtn = document.querySelector('#colorBtn');
+const darkeningBtn = document.querySelector('#darkeningBtn');
 const eraseBtn = document.querySelector('#eraseBtn');
 
 // generate the canvas 
@@ -15,6 +16,8 @@ generateCanvas.addEventListener('click', () => {
         createGrid(gridSize);
     } else alert('Provided value is not a number or exceeds the limit.');
 });
+
+// progressively change the darkening of a pixel by 10%
 
 
 // erase button to remove coloring of each pixel
