@@ -8,19 +8,19 @@ const eraseBtn = document.querySelector('#eraseBtn');
 // show this message as default text when canvas is empty
 canvas.innerHTML = 'Click on "Generate" to create a new Blank Canvas.';
 
-// enable/disable outliens of each pixel on the canvas
-outlinesBtn.addEventListener('click', () => {
-    canvas.childNodes.forEach((pixel) => {
-        if (pixel.style.borderLeft === '' && pixel.style.borderTop === '') {
-            pixel.style.borderLeft = '1px solid black';
-            pixel.style.borderTop = '1px solid black';
-        } else {
-            // disable borders
-            pixel.style.borderLeft = '';
-            pixel.style.borderTop = '';
-        }
-    });
-});
+// // enable/disable outliens of each pixel on the canvas
+// outlinesBtn.addEventListener('click', () => {
+//     canvas.childNodes.forEach((pixel) => {
+//         if (pixel.style.borderLeft === '' && pixel.style.borderTop === '') {
+//             pixel.style.borderLeft = '1px solid black';
+//             pixel.style.borderTop = '1px solid black';
+//         } else {
+//             // disable borders
+//             pixel.style.borderLeft = '';
+//             pixel.style.borderTop = '';
+//         }
+//     });
+// });
 
 // generate the canvas 
 generateCanvas.addEventListener('click', () => {
