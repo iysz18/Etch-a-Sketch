@@ -10,6 +10,8 @@ Utilizing the `div` element in HTML to display `pixels`
 
 * Option to disable/enable the outlines of the pixels
 
+* A button that erases coloring of each pixel
+
 
 ## What's done:
 * [X] Prompt to enter a desired grid dimension between 0 - 100.
