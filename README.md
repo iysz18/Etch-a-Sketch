@@ -4,11 +4,13 @@ Utilizing the `div` element in HTML to display `pixels`
 
 
 ## What's coming soon:
-* Adding a watermark text saying "Etch-a-Sketch" which covers the canvas. By clicking on the empty canvas it gets revealed to the user.
+
 
 * Implementing a progressively darkening effetct where each interaction adds 10% more black or color to the square. The objective is to achieve a completely black square only after ten interactions.
 
 * Option to disable/enable the outlines of the pixels
+
+* Implement the support for touchscreens (smartphones, tablets ...)
 
 
 ## What's done:
@@ -22,3 +24,6 @@ Utilizing the `div` element in HTML to display `pixels`
 the pixel's RGB value entirely.
 
 * [X] Introducing an erase button desigend to remove the color of each pixel.
+
+* [X] Adding an infomative text saying "Click on generate to create a blank canvas" or something similar which is placed in the center of the canvas. By clicking on the generate button the empty canvas gets revealed to the user. Same text appears when the user decides to reset the grid size.
+
