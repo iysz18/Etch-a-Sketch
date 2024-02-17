@@ -2,7 +2,7 @@ const canvas = document.querySelector('#canvas');
 const generateCanvas = document.querySelector('#genBtn');
 const resetCanvas = document.querySelector('#resetBtn');
 const colorBtn = document.querySelector('#colorBtn');
-
+const eraseBtn = document.querySelector('#eraseBtn');
 
 // generate the canvas 
 generateCanvas.addEventListener('click', () => {
@@ -17,12 +17,20 @@ generateCanvas.addEventListener('click', () => {
 });
 
 
+// erase button to remove coloring of each pixel
+eraseBtn.addEventListener('click', () => {
+    canvas.childNodes.forEach(pixel => {
+        pixel.style.backgroundColor = '';
+    });
+});
+
+
 // color button logic, choose color to change the pixel
 colorBtn.addEventListener('click', () => {
     let color = prompt("You can enter any color or 'rgb' for rgb random output.");
     color = color.toLocaleLowerCase();
     
-    canvas.childNodes.forEach(pixel => {
+    canvas.childNodes.forEach( (pixel) => {
         pixel.addEventListener('mouseover', () => {
             if (color !== 'rgb') pixel.style.backgroundColor = `${color}`;
             else {
@@ -33,7 +41,7 @@ colorBtn.addEventListener('click', () => {
                 pixel.style.backgroundColor = `${rgbColor}`;
             }
         });
-    })
+    });
 });
 
 
