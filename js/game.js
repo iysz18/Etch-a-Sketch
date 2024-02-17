@@ -3,7 +3,7 @@ const generateCanvas = document.querySelector('#genBtn');
 const resetCanvas = document.querySelector('#resetBtn');
 const colorBtn = document.querySelector('#colorBtn');
 const eraseBtn = document.querySelector('#eraseBtn');
-const outlinesBtn = document.querySelector('#outlinesBtn');
+// const outlinesBtn = document.querySelector('#outlinesBtn');
 
 // show this message as default text when canvas is empty
 canvas.innerHTML = 'Click on "Generate" to create a new Blank Canvas.';
